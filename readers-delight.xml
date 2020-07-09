@@ -1211,11 +1211,12 @@
 						</b:widget>
 					</b:section>
 					
+					<!-- right-sidebar-section-->
 					<b:section id='right-sidebar-section' class='right-sidebar-section' mobile='no'>
 						
 					</b:section>
 
-					<!-- correction -->
+					<!-- hides the sidebar section when the post is viewed -->
 					<b:if cond='data:blog.pageType == "item"'>				
 						<script>
 								document.getElementById("right-sidebar-section").classList.remove("right-sidebar-section");
@@ -1239,6 +1240,8 @@
 									<b:widget-setting name='timeRange'>ALL_TIME</b:widget-setting>
 								</b:widget-settings>
 								<b:includable id='main'>
+									
+									<!-- Widget title -->
 									<b:if cond='data:title != ""'>
 										<h2 class='widget-heading'>
 											<data:title/>
@@ -1293,14 +1296,19 @@
 						</b:section>
 					</div>
 					<div class="bottom-widget-row" style='max-width:78%;'>
+						
+						<!-- bottom-left-section -->
 						<b:section id='bottom-section-2' class='bottom-section' title='Bottom Section 2'>
 
 						</b:section>
+						
+						<!-- bottom-middle-section -->
 						<b:section id='bottom-section-3' class='bottom-section' title='Bottom Section 3'>
 							
 						</b:section>
+						
+						<!-- bottom-right-section -->
 						<b:section id='bottom-section-4' class='bottom-section' title='Bottom Section 4'>
-							<!-- blog archive widget-->
 							
 						</b:section>
 					</div>
