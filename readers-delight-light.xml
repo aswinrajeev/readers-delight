@@ -546,8 +546,9 @@
 
 			.mini-post-card {
 				max-width: 280px;
-				margin-right: 17px;
-				margin-left: 17px;
+				margin-right: 5px;
+				margin-left: 5px;
+				margin-bottom: 10px;
 				white-space: normal;
 				float: left;
 				display: inline-block;
@@ -669,6 +670,10 @@
 				display: unset;
 			}
 
+			.mobile .post-card {
+				max-width: unset;
+			}
+
 			.mobile .post-card .post-title {
 				line-height: 26px;
 				font-size: 21px;
@@ -697,6 +702,10 @@
 			.mobile .bottom-section {
 				max-width: unset;
 				min-width: unset;
+			}
+
+			.mobile .adsbygoogle {
+				max-width: 300px;
 			}
 		]]>
 		</b:skin>
