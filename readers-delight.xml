@@ -602,7 +602,7 @@
 				width: 100%;
 			}
 
-			.topics-cloud {
+			.Label {
 				max-width: 300px;
 			}
 
@@ -695,6 +695,10 @@
 			.mobile .bottom-section {
 				max-width: unset;
 				min-width: unset;
+			}
+
+			.mobile .adsbygoogle {
+				max-width: 300px;
 			}
 		]]>
 		</b:skin>
@@ -1220,7 +1224,7 @@
 					<!-- hide sidebar in read page -->
 					<b:if cond='data:blog.pageType == "item"'>				
 						<script>
-								document.getElementById("right-sidebar-section").classList.remove("right-sidebar-section");
+								document.getElementById("right-sidebar-section").style.display = 'none';
 						</script>
 					</b:if>
 				</div>
