@@ -1,2 +1,3 @@
-# readers-delight
-A delightful and reader-friendly theme for blogger
+# Readers Delight Blogger themes
+
+A delightful and reader-friendly theme family for Blogger.
