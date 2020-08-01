@@ -781,6 +781,7 @@
 
 			.mobile, .mobile .container, .mobile .main-container .main-section {
 				min-width: 0px;
+				padding-right: unset;
 			}
 
 			.mobile .container-inner {
