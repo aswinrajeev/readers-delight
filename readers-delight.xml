@@ -52,11 +52,6 @@
 				color: inherit;
 			}
 
-			p {
-				margin: 35px 0 0;
-				line-height: 35px;
-			}
-
 			pre {
 				display: block;
 				max-width: 90vw;
@@ -71,6 +66,10 @@
 				background-color: #f5f5f5;
 				border: 1px solid #ccc;
 				border-radius: 4px;
+			}
+
+			.widget {
+				margin-bottom: 20px;
 			}
 
 			.widget h2, .widget h1, .widget h3, .widget-heading {
@@ -110,7 +109,7 @@
 				backdrop-filter: saturate(180%) blur(20px);
 				-webkit-backdrop-filter: saturate(180%) blur(20px);
 				color: rgb(225, 230, 235);
-				z-index: 1000;
+				z-index: 100;
 			}
 
 			.Header .logo{
@@ -198,12 +197,13 @@
 			}
 
 			.main-container .main-section {
-				max-width: 680px;
+				max-width: 750px;
 				min-width: 600px;
 				width: 100%;
 				margin: 0 auto;
 				display: table-cell;
 				vertical-align: top;
+				padding-right: 30px;
 			}
 
 			.right-sidebar-section {
@@ -245,7 +245,12 @@
 
 			.post-body {
 				line-height: 35px;
-				font-size: 21px;
+				font-size: 19px;
+			}
+
+			.post-body p, .post-body div {
+				margin: 35px 0 0;
+				line-height: 35px;
 			}
 
 			.post-container .h1, 
@@ -317,6 +322,48 @@
 			.post-card .post-card-main {
 				padding: 15px;
 				padding-top: 3px;
+				padding-bottom: 50px;
+				position: relative;
+			}
+
+			.post-card .post-card-main .bottom-fade {
+				position: absolute;
+				bottom: 0px;
+				margin-left: -20px;
+				display: block;
+				width: 100%;
+				height: 65px;
+				text-align: right;
+				padding: 17px;
+				background-image: linear-gradient(
+					to bottom, 
+					rgba(255, 255, 255, 0), 
+					rgba(255, 255, 255, 0.9) 
+					30%
+				);
+			}
+
+			.post-card .jump-link {
+				text-align: center;
+				overflow: hidden;
+				font-size: 14px;
+				float: right;
+				border: thin solid rgb(30, 30, 30);
+				color: rgb(10, 10, 10);
+				padding: 5px;
+				padding-left: 8px;
+				padding-right: 8px;
+				border-radius: 5px;
+				outline: none;
+			}
+
+			.post-card .jump-link .fa {
+				font-size: 11px;
+			}
+
+			.post-card .jump-link:hover {
+				background-color: rgb(210, 210, 210);
+				transition: opacity 400ms ease 0ms;
 			}
 
 			.post-card-thumbnail {
@@ -350,11 +397,12 @@
 
 			.post-card .post-date {
 				margin-bottom: 6px;
+				margin-top:0px;
 			}
 
 			.post-card .post-body {
 				line-height: 29px;
-				font-size: 18px;
+				font-size: 16px;
 			}
 
 			.author-profile {
@@ -412,7 +460,7 @@
 
 			.post-tags a {
 				color: rgb(10, 150, 220);
-				font-size: 21px;
+				font-size: 19px;
 			}
 
 			.comments {
@@ -422,7 +470,6 @@
 			}
 
 			.comments .comments-content .comment {
-				margin-bottom: unset;
 				padding-bottom: unset;
 			}
 
@@ -516,7 +563,7 @@
 			}
 
 			.highlight-group {
-				padding: 20px;
+				padding: 10px;
 				padding-top: 3px;
 				padding: bottom: 3px;
 				margin-top: 30px;
@@ -542,6 +589,7 @@
 				margin: 0 auto;
 				margin-bottom: 30px;
 				display: table-cell;
+				padding: 10px;
 			}
 
 			.bottom-section .widget-heading {
@@ -626,6 +674,81 @@
 			.Stats {
 				text-align: center;
 			}
+
+			.popup-container {
+				background-color: rgba(8, 9, 10, 0.8);
+				backdrop-filter: saturate(180%) blur(20px);
+				-webkit-backdrop-filter: saturate(180%) blur(20px);
+				overflow-y: auto;
+				overlow-x: hidden;
+				width: 600px; /* later replaced through JS */
+				z-index: 110;
+			}
+
+			.popup-container .close-button {
+				font-size: x-large;
+				font-weight: bolder;
+				position: absolute;
+				top: 0px;
+				right: 0px;
+				padding: 20px;
+				color: rgb(152, 153, 154);
+				opacity: 0.85
+			}
+
+			.popup-container .close-button:hover {
+				opacity: 1;
+			}
+
+			.popup-section {
+				margin: 0;
+				position: absolute;
+				top: 50%;
+				-ms-transform: translateY(-50%, -50%);
+				transform: translate(-50%, -50%);
+				left: 50%;
+				margin: 0 auto;
+				padding: 10px;
+			}
+
+			.popup-section .widget .h2, .popup-section .widget h2 {
+				color: rgb(164, 162, 162);
+				margin-bottom: 20px;
+			}
+
+			.FollowByEmail .follow-by-email-inner .follow-by-email-address {
+				padding: 17px;
+				outline: none;
+				border-radius: 5px;
+				min-width: 250px;
+				border: 2px solid rgba(15, 15, 15, 0.8);
+			}
+
+			.FollowByEmail .follow-by-email-inner .follow-by-email-submit {
+				padding: 10px;
+				width: 100px;
+				border-radius: 5px;
+				height: unset;
+				width: unset;
+			}
+
+			.LinkList li {
+				display: inline;
+				text-decoration: none;
+				list-style: none;
+				margin-left: 10px;
+				padding-right: 10px;
+				border-right: solid thin;
+				color: rgba(250, 250, 250, 0.8);
+			}
+
+			.LinkList li:last-child {
+				border-right: unset;
+			}
+
+			.LinkList a {
+				color: rgba(250, 250, 250, 0.8);
+			}
 			
 			/* Mobile Overrides */
 			/*==================*/
@@ -694,7 +817,7 @@
 			}
 
 			.mobile .post-card .post-body {
-				font-size: 18px;
+				font-size: 16px;
 				line-height: 24px;
 			}
 
@@ -720,6 +843,10 @@
 
 			.mobile .adsbygoogle {
 				max-width: 300px;
+			}
+
+			.mobile .comments .thread-toggle {
+				margin-left: 30px;
 			}
 		]]>
 		</b:skin>
@@ -758,13 +885,22 @@
 					</div>
 
 					<!-- subscribe button. TODO: Popup on click-->
-					<button class="subscribe-button">Subscribe</button>
+					<button class="subscribe-button" onclick='openPopup()'>Subscribe</button>
 				</b:includable>
 			</b:widget>
 		</b:section>
 
 		<!-- main container-->
 		<div id='container' class='container'>
+
+			<b:if cond='data:blog.pageType == &quot;index&quot;'>
+				<div itemscope='itemscope' itemtype='https://schema.org/Blog' style='display: none;'>
+				<meta expr:content='data:blog.title' itemprop='name'/>
+				<b:if cond='data:blog.metaDescription'>
+					<meta expr:content='data:blog.metaDescription' itemprop='description'/>
+				</b:if>
+				</div>
+			</b:if>
 
 			<!-- margin adjustments for mobile/desktop-->
 			<b:if cond='data:blog.isMobile'>
@@ -964,7 +1100,17 @@
 										<!-- post snippet-->
 										<div class="post-body" expr:id='"post-body-" + data:post.id' expr:itemprop='(data:blog.metaDescription ? "" : "description") + "articleBody"'>
 											<data:post.snippet/>
-											<div style='clear: both;'/>
+										</div>
+
+										<div class="bottom-fade">
+											<b:if cond='data:post.hasJumpLink'>
+												<div class='jump-link' style='margin-left: 0px;'>
+													<a expr:href='data:post.url' expr:title='data:post.title'>
+														<data:post.jumpText/>
+														<i class="fa fa-chevron-right" aria-hidden="true"/>
+													</a>
+												</div>
+											</b:if>
 										</div>
 									</div>
 								</div>
@@ -986,6 +1132,27 @@
 
 							<!-- post-full -->
 							<b:includable id='post-full' var='post'>
+
+								<!--Twitter card support-->
+								<meta content='summary_large_image' name='twitter:card'/>
+								<!--meta content='summary' name='twitter:card'/--> 
+								<meta content='@aswinrajeev' name='twitter:site'/>
+								<meta content='@aswinrajeev' name='twitter:creator'/>
+								<meta content='www.aswinsblog.com' name='twitter:domain'/>
+								<meta expr:content='data:post.firstImageUrl' name='twitter:image:src'/>
+								<meta expr:content='data:post.title' name='twitter:title'/>
+								<b:if cond='data:blog.metaDescription'>
+									<meta expr:content='data:blog.metaDescription' name='twitter:description'/>
+								<b:else/>
+									<meta expr:content='data:post.snippet' name='twitter:description'/>
+								</b:if>
+								<meta expr:content='data:post.sharePostUrl' name='twitter:url'/>
+
+								<b:if cond='data:post.thumbnailUrl'>
+									<meta expr:content='data:post.thumbnailUrl' itemprop='image_url'/>
+								</b:if>
+								<meta expr:content='data:blog.blogId' itemprop='blogId'/>
+								<meta expr:content='data:post.id' itemprop='postId'/>
 
 								<!-- post title -->
 								<a expr:name='data:post.id'/>
@@ -1243,11 +1410,11 @@
 					</b:section>
 
 					<!-- hide sidebar in read page -->
-					<b:if cond='data:blog.pageType == "item"'>				
+					<!-- <b:if cond='data:blog.pageType != "index"'>				
 						<script>
 								document.getElementById("right-sidebar-section").style.display = 'none';
 						</script>
-					</b:if>
+					</b:if> -->
 				</div>
 			</div>
 
@@ -1258,7 +1425,7 @@
 						<b:section id='bottom-section-1' class='bottom-section' title='Bottom Section 1'>
 
 							<!-- popular posts widget -->
-							<b:widget id='PopularPosts1' mobile='yes' locked='false' title='Popular Posts' type='PopularPosts'>
+							<b:widget id='PopularPosts1' mobile='yes' locked='false' title='You may also like to read' type='PopularPosts'>
 								<b:widget-settings>
 									<b:widget-setting name='numItemsToShow'>6</b:widget-setting>
 									<b:widget-setting name='showThumbnails'>true</b:widget-setting>
@@ -1359,6 +1526,108 @@
 					</b:widget>
 				</b:section>
 			</div>
+
+		</div>
+
+		<!-- popup container -->
+		<div class="popup-container" id="popup-container">
+			<script type='text/javascript'>
+				// hide the popup by default
+				document.getElementById('popup-container').style.display='none';
+
+				// sets the CSS
+				document.getElementById('popup-container').style.position= 'fixed';
+				document.getElementById('popup-container').style.top= '0px';
+				document.getElementById('popup-container').style.bottom= '0px';
+				document.getElementById('popup-container').style.left= '0px';
+				document.getElementById('popup-container').style.right= '0px';
+				document.getElementById('popup-container').style.width= 'unset';
+
+				// shows it after 5 seconds
+				setTimeout(() => {
+					openPopup();
+				}, 5000);
+
+				//function to open the popup
+				function openPopup() {
+					document.getElementById('popup-container').style.display='';
+				}
+
+				// function to close the popup
+				function closePopup() {
+					document.getElementById('popup-container').style.display='none';
+				}
+			</script>
+
+			<!-- close popup button -->
+			<a href='javascript:void(0);' onclick='closePopup()'>
+				<i class="fa fa-times-circle close-button" aria-hidden="true"></i>
+			</a>
+
+			<!-- popup section -->
+			<b:section class="popup-section" id='popup-section'>
+
+				<!-- follow by email widget -->
+				<b:widget id='FollowByEmail1' mobile='yes' locked='false' title='Subscribe' type='FollowByEmail'>
+					<b:includable id='main'>
+						<b:if cond='data:title != &quot;&quot;'><h2 class='title'><data:title/></h2></b:if>
+						<div class='widget-content'>
+							<div class='follow-by-email-inner'>
+							<form action='https://feedburner.google.com/fb/a/mailverify' expr:onsubmit='&quot;window.open(\&quot;https://feedburner.google.com/fb/a/mailverify?uri=&quot; + data:feedPath + &quot;\&quot;, \&quot;popupwindow\&quot;, \&quot;scrollbars=yes,width=550,height=520\&quot;); return true&quot;' method='post' target='popupwindow'>
+								<table width='100%'>
+								<tr>
+									<td>
+									<input class='follow-by-email-address' name='email' placeholder='Email address...' type='text'/>
+									</td>
+									<td width='64px'>
+									<input class='follow-by-email-submit' type='submit' value='Submit'/>
+									</td>
+								</tr>
+								</table>
+								<input expr:value='data:feedPath' name='uri' type='hidden'/>
+								<input name='loc' type='hidden' value='en_US'/>
+							</form>
+							</div>
+						</div>
+					</b:includable>
+				</b:widget>
+
+				<!-- social icons -->
+				<b:widget id='HTML3' mobile='yes' locked='false' title='' type='HTML'>
+					<b:widget-settings>
+						<b:widget-setting name='content'>
+							&lt;style&gt;
+								.profile-social-icons-2 {
+									margin-top:-15px;
+									letter-spacing:5px;
+									font-size:18px;
+								}
+								.profile-social-icons-2 a {
+									color: rgba(210, 210, 210, 0.8);
+								}
+								.profile-social-icons-2 a:hover {
+									color: rgba(210, 210, 210, 1);
+								}
+							&lt;/style&gt;
+							&lt;div class=&#39;profile-social-icons-2&#39;&gt;
+							&lt;a href=&#39;https://facebook.com/aswinrajeev.in&#39; target=&#39;_blank&#39;&gt;&lt;i class=&#39;fa fa-facebook&#39;/&gt;&lt;/i&gt;&lt;/a&gt;
+							&lt;a href=&#39;https://twitter.com/aswinrajeev&#39; target=&#39;_blank&#39;&gt;&lt;i class=&#39;fa fa-twitter&#39;/&gt;&lt;/i&gt;&lt;/a&gt;
+							&lt;a href=&#39;https://in.linkedin.com/in/aswinrajeev/&#39; target=&#39;_blank&#39;&gt;&lt;i class=&#39;fa fa-linkedin&#39;/&gt;&lt;/i&gt;&lt;/a&gt; 	
+							&lt;a href=&#39;https://github.com/aswinrajeev&#39; target=&#39;_blank&#39;&gt;&lt;i class=&#39;fa fa-github&#39;/&gt;&lt;/i&gt;&lt;/a&gt;
+							&lt;/div&gt;
+						</b:widget-setting>
+					</b:widget-settings>
+					<b:includable id='main'>
+						<!-- only display title if it's non-empty -->
+						<b:if cond='data:title != &quot;&quot;'>
+							<h2 class='title'><data:title/></h2>
+						</b:if>
+						<div class='widget-content'>
+							<data:content/>
+						</div>
+					</b:includable>
+				</b:widget>
+			</b:section>
 		</div>
 	</body>
 </html>
