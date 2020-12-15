@@ -733,7 +733,7 @@
 				border-radius: 5px;
 				height: 38px;
 				font-size: 13px;
-				background-color: rgba(0,0,0,0.6);
+				background-color: rgb(30,30,30);
 				color: #fff;
 				outline: thin rgba(0,0,0,0.8);
 				border: none;
