@@ -105,9 +105,10 @@
 				right: 0px;
 				left: 0px;
 				height: 55px;
-				background-color: rgba(15, 16, 17, 0.9);
+				background-color: rgba(15, 16, 17, 0.85);
 				backdrop-filter: saturate(180%) blur(20px);
 				-webkit-backdrop-filter: saturate(180%) blur(20px);
+				box-shadow: 0 1px 2px rgba(10, 10, 10, 0.4);
 				color: rgb(225, 230, 235);
 				z-index: 100;
 			}
@@ -116,6 +117,8 @@
 				padding: 10px;
 				padding-top: 8px;
 				font-weight: bold;
+				position: absolute;
+				left: 20px;
 			}
 
 			.Header .logo .logo-img {
@@ -160,7 +163,7 @@
 				padding-right: 8px;
 				position: absolute;
 				top: 12px;
-				right: 18px;
+				right: 38px;
 				border-radius: 5px;
 				outline: none;
 			}
@@ -775,6 +778,14 @@
 				right: 0px;
 			}
 
+			.mobile .Header .logo {
+				left: 2px;
+			}
+			
+			.mobile .Header .subscribe-button {
+				right: 18px;
+			}
+
 			.mobile .right-sidebar-section {
 				display: none;
 			}
@@ -1112,14 +1123,12 @@
 										</div>
 
 										<div class="bottom-fade">
-											<b:if cond='data:post.hasJumpLink'>
-												<div class='jump-link' style='margin-left: 0px;'>
-													<a expr:href='data:post.url' expr:title='data:post.title'>
-														<data:post.jumpText/>
-														<i class="fa fa-chevron-right" aria-hidden="true"/>
-													</a>
-												</div>
-											</b:if>
+											<div class='jump-link' style='margin-left: 0px;'>
+												<a expr:href='data:post.url' expr:title='data:post.title'>
+													<data:post.jumpText/>
+													<i class="fa fa-chevron-right" aria-hidden="true"/>
+												</a>
+											</div>
 										</div>
 									</div>
 								</div>
