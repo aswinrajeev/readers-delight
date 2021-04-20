@@ -113,6 +113,12 @@
 				z-index: 100;
 			}
 
+			.Header .header-container {
+				max-width: 1200px;
+    			margin: 0 auto;
+				position: relative;
+			}
+
 			.Header .logo{
 				padding: 10px;
 				padding-top: 8px;
@@ -132,8 +138,8 @@
 			.Header .searchbox {
 				position: absolute;
 				top: 2px;
-				left: 350px;
-				right: 350px;
+				left: 250px;
+				right: 250px;
 				padding-left: 20px;
 				padding-right: 20px;
 			}
@@ -206,7 +212,7 @@
 				margin: 0 auto;
 				display: table-cell;
 				vertical-align: top;
-				padding-right: 30px;
+				padding-right: 55px;
 			}
 
 			.right-sidebar-section {
@@ -303,6 +309,10 @@
 				transition: opacity 400ms ease 0ms;
 			}
 
+			.post-body a {
+				color: rgb(10, 150, 220);
+			}
+
 			.post-date {
 				color: rgb(117, 117, 117);
 				display: inline-block;
@@ -316,7 +326,6 @@
 				border-radius: 7px;
 				overflow: hidden;
 				margin: 0 auto;
-				max-width: 90%;
 				text-overflow: ellipsis;
 				margin-bottom: 35px;
 				transition: opacity 400ms ease 0ms;
@@ -409,9 +418,7 @@
 			}
 
 			.author-profile {
-				width: 92%;
-				margin: 0 auto;
-				margin-top: 35px;
+				
 			}
 
 			.author-profile p {
@@ -423,12 +430,11 @@
 				border-radius: 100%;
 				width: 100px;
 				float: right;
-				margin-right: 10px;
 				margin-top: 10px;
 			}
 
 			.author-profile .author-details {
-				margin-left: 10px;
+				
 			}
 
 			.author-profile .author-details h1 {
@@ -446,7 +452,6 @@
 			.html-widget-content {
 				margin-left: 10px;
 				margin-right: 10px;
-				width: 88%;
 				margin: 0 auto;
 				margin-top: 30px;
 			}
@@ -743,6 +748,10 @@
 				width: unset;
 			}
 
+			.LinkList ul {
+				padding-left: 0px;
+			}
+
 			.LinkList li {
 				display: inline;
 				text-decoration: none;
@@ -766,16 +775,17 @@
 
 			.mobile .Header {
 				min-width: 0px;
+				right: -2px;
 			}
 
 			.mobile .Header .searchbox {
-				top: 54px;
+				top: 52px;
 				height: 45px;
 				background-color: rgba(19, 20, 21, 0.9);
 				backdrop-filter: saturate(180%) blur(20px);
 				-webkit-backdrop-filter: saturate(180%) blur(20px);
-				left: 0px;
-				right: 0px;
+				left: -2px;
+				right: -2px;
 			}
 
 			.mobile .Header .logo {
@@ -884,28 +894,30 @@
 		<b:section id='header' title='Header' class='header-section' maxwidgets='1' showaddelement='no'>
 			<b:widget id='Header1' class='header' type='Header' locked='true'>
 				<b:includable id='main'>
+					<div class="header-container">
 
-					<!-- Blog logo / title -->
-					<div id='header-logo' class='logo'>
-						<b:if cond='data:useImage'>
-							<a href='/'>
-								<img class='logo-img' expr:alt='data:title' expr:src='data:sourceUrl' width='160px'/>
-							</a>
-							<b:else/>
-							<span>
-								<data:title/>
-							</span>
-						</b:if>
+						<!-- Blog logo / title -->
+						<div id='header-logo' class='logo'>
+							<b:if cond='data:useImage'>
+								<a href='/'>
+									<img class='logo-img' expr:alt='data:title' expr:src='data:sourceUrl' width='160px'/>
+								</a>
+								<b:else/>
+								<span>
+									<data:title/>
+								</span>
+							</b:if>
+						</div>
+
+						<!-- header searchbox -->
+						<div class="searchbox">
+							<span class="glyphicon glyphicon-search search-icon"></span>
+							<input type="text" class="searchfield" placeholder='Search this site' expr:value='data:blog.searchLabel ? data:blog.searchLabel : (data:blog.searchQuery ? data:blog.searchQuery : "")' onkeypress='search(event, this.value)'/>
+						</div>
+
+						<!-- subscribe button. TODO: Popup on click-->
+						<button class="subscribe-button" onclick='openPopup()'>Subscribe</button>
 					</div>
-
-					<!-- header searchbox -->
-					<div class="searchbox">
-						<span class="glyphicon glyphicon-search search-icon"></span>
-						<input type="text" class="searchfield" placeholder='Search this site' expr:value='data:blog.searchLabel ? data:blog.searchLabel : (data:blog.searchQuery ? data:blog.searchQuery : "")' onkeypress='search(event, this.value)'/>
-					</div>
-
-					<!-- subscribe button. TODO: Popup on click-->
-					<button class="subscribe-button" onclick='openPopup()'>Subscribe</button>
 				</b:includable>
 			</b:widget>
 		</b:section>
